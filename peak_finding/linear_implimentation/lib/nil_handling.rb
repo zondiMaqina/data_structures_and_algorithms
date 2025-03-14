@@ -12,6 +12,6 @@ module NilHandling
 
   def has_both_neighbours?(array, index)
     # has left and right neighbour
-    !left_nil?(array, index) && !right_nil?(array, index)
+    left_nil?(array, index) == false && right_nil?(array, index) == false
   end
 end
