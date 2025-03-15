@@ -7,16 +7,16 @@
 # stops as soon as the element is the peak and returns it
 
 class PeakFinding
-  def find_peak(array)
-    p array
+  def find_peak(array, count = 1)
+    p count
     mid = array.size / 2
     if array.size <= 1
       return array[mid]
     else
       return array[mid] if array[mid] >= array[mid + 1].to_i && array[mid] >= array[mid - 1].to_i
   
-      left = find_peak(array[0...mid]) # look on left
-      right = find_peak(array[mid..array.size - 1]) # look on right
+      left = find_peak(array[0...mid], count += 1) # look on left
+      right = find_peak(array[mid..array.size - 1], count += 1) # look on right
 
       return left if left >= right
       return right if right >= left
@@ -25,4 +25,7 @@ class PeakFinding
   end
 end
 
-puts PeakFinding.new.find_peak([1, 5, 3, 4])
+puts PeakFinding.new.find_peak([1, 2, 3, 4, 5, 6])
+
+# it does find the peak but not exactly logarithmicly
+# funy, it works more like a merge-sort type of way which works linear which beats 0(n*2)
