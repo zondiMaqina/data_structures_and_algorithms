@@ -9,17 +9,18 @@ class PeakFinding
 
   def find_peak(array, start, endpoint)
     @steps += 1
-    [start, endpoint]
+    return nil if array.size <= 0
+
     mid = (start + endpoint) / 2
     if array[mid - 1].to_i > array[mid]
-      return find_peak(array, 0, mid - 1, c += 1)
+      return find_peak(array, 0, mid - 1)
     end
 
     if array[mid + 1].to_i > array[mid]
       return find_peak(array, mid + 1, array.size - 1)
     end
 
-    puts "peak #{array[mid]} found at index #{mid}"
+    puts "peak #{array[mid]} found at index #{mid} in #{@steps} steps"
   end
 end
 
