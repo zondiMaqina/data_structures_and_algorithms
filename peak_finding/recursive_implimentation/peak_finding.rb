@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 # class for finding peak in array recursively
-
-# we will try to find peak using binary search
-# search stops as soon as element is the only one left
-# stops as soon as the element is the peak and returns it
-
 class PeakFinding
-  def find_peak(array, start, endpoint, c = 1)
-    p c
+  attr_reader :steps
+  def initialize(steps = 0)
+    @steps = steps
+  end
+
+  def find_peak(array, start, endpoint)
+    @steps += 1
     [start, endpoint]
     mid = (start + endpoint) / 2
     if array[mid - 1].to_i > array[mid]
@@ -16,7 +16,7 @@ class PeakFinding
     end
 
     if array[mid + 1].to_i > array[mid]
-      return find_peak(array, mid + 1, array.size - 1, c += 1)
+      return find_peak(array, mid + 1, array.size - 1)
     end
 
     puts "peak #{array[mid]} found at index #{mid}"

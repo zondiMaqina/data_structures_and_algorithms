@@ -6,9 +6,9 @@ This repository has some of the most common data structures used to handle data 
 
 [Peak Finding](./peak_finding)
   [linear implimentation](./peak_finding/linear_implimentation)
-  [recursive implimenttation](./peak_finding/recursive_implimentation/)
+  [recursive implimenttation](./peak_finding/recursive_implimentation/peak_finding.rb)
 
-**For each algorithm used there will be two types of approaches:**
+**For each algorithm used, there will be two types of approaches:**
 
 - linear => using  linear time complexity in worst case scenario (O(n) time complexity)
 - recursive => using Logarithmic time complexity given the same scenario (log(n) time complexity)
