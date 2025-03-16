@@ -7,25 +7,25 @@
 # stops as soon as the element is the peak and returns it
 
 class PeakFinding
-  def find_peak(array, count = 1)
-    p count
-    mid = array.size / 2
-    if array.size <= 1
-      return array[mid]
-    else
-      return array[mid] if array[mid] >= array[mid + 1].to_i && array[mid] >= array[mid - 1].to_i
-  
-      left = find_peak(array[0...mid], count += 1) # look on left
-      right = find_peak(array[mid..array.size - 1], count += 1) # look on right
-
-      return left if left >= right
-      return right if right >= left
+  def find_peak(array, start, endpoint, c = 1)
+    p c
+    [start, endpoint]
+    mid = (start + endpoint) / 2
+    if array[mid - 1].to_i > array[mid]
+      return find_peak(array, 0, mid - 1, c += 1)
     end
-    'Peak not found'
+
+    if array[mid + 1].to_i > array[mid]
+      return find_peak(array, mid + 1, array.size - 1, c += 1)
+    end
+
+    puts "peak #{array[mid]} found at index #{mid}"
   end
 end
 
-puts PeakFinding.new.find_peak([1, 2, 3, 4, 5, 6])
+array = [1, 2, 3, 4, 5, 6, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]
 
-# it does find the peak but not exactly logarithmicly
-# funy, it works more like a merge-sort type of way which works linear which beats 0(n*2)
+PeakFinding.new.find_peak(array, 0, array.size - 1)
+
+# time complexity is log(n) meaning it takes way less steps than 0(n) even in worst cases
+# e.g in an array of size == 23, it will take 5 literal steps to find peak in worst case whereby in 0(n) it will take array.size steps
