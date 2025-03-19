@@ -7,6 +7,9 @@ This repository has some of the most common data structures used to handle data 
 [Peak Finding](./peak_finding)
   [linear implimentation](./peak_finding/linear_implimentation)
   [recursive implimenttation](./peak_finding/recursive_implimentation/peak_finding.rb)
+[Insertion Sort](./insertion_sort/)
+  [linear implimentation](./insertion_sort/linear_implimentation)
+  [recursive implimenation](./insertion_sort/recursive_implimenation)
 
 **For each algorithm used, there will be two types of approaches:**
 
