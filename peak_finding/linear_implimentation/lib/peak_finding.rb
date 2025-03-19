@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'nil_handling'
-
 # class for finding peak in array
 class PeakFinding
-  include NilHandling
-
   def initialize
     @value, @index = nil
     @status = false
@@ -14,16 +10,8 @@ class PeakFinding
   def find_peak(array)
     array.each_with_index do |int, i|
       @value = int
-      if has_both_neighbours?(array, i)
-        @index = i
-        @status = true if int >= array[i - 1] && int >= array[i + 1]
-      elsif left_nil?(array, i) == false
-        @index = i
-        @status = true if int >= array[i - 1]
-      else
-        @index = i
-        @status = true if int >= array[i + 1]
-      end
+      @index = i
+      @status = true if int >= array[i - 1].to_i && int >= array[i + 1].to_i
       break if @status # breaks if peak is found (SCE)
     end
     conclusion
@@ -35,7 +23,6 @@ class PeakFinding
     puts 'No peak found'
   end
 end
-
-# The peak find method has a heavy if statement branches so that comparing an integer to nil is avoided
-
+PeakFinding.new.find_peak([1, 2, 12, 5])
+# frtunately nil can be converted to 0 by #to_i method
 # SCE -> Short Circuit Evaluation
