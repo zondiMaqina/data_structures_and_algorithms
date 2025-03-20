@@ -20,9 +20,11 @@ class InsertionSort
     current_value = nil
     while i <= endpoint
       if list[i] >= new_value
+        # save value that is to be replaced
         current_value = list[i]
         list[i] = new_value
       end
+      # make saved value in array the nnew value
       new_value = current_value
       i += 1
     end
@@ -30,3 +32,6 @@ class InsertionSort
   end
 end
 
+# This algortihm takes O(n) time complexity where n => (array.size - new_value's index on array)
+
+# as it needs to also shuffles the rest of the array
