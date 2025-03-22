@@ -1,6 +1,6 @@
 # Data_Structures_and_Algorithms
 
-Below are some common algorithms for searching or sorting data based ony my implimentations with Ruby
+Below are some common algorithms for searching or sorting data based on my implimentations with Ruby
 
 ## Solutions
 
@@ -11,6 +11,7 @@ Below are some common algorithms for searching or sorting data based ony my impl
 - [Insertion Sort](./insertion_sort/)
   - [linear implimentation](./insertion_sort/linear_implimentation)
 - [Bubble Sort](./bubble_sort/bubble_sort.rb)
+- [Merge Sort](./merge_sort/merge_sort.rb)
 
 **For each algorithm used, there will be two types of approaches:**
 
@@ -18,4 +19,4 @@ Below are some common algorithms for searching or sorting data based ony my impl
 - Recursively
 
 > [!NOTE]
-> The algorithms in this repo are tested using the Ruby gem (framework) RSec (Ruby Specifications)
+> The algorithms above are are tested using the Ruby gem (framework) RSec (Ruby Specifications)
