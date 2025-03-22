@@ -10,7 +10,7 @@ Below are some common algorithms for searching or sorting data based ony my impl
   - [recursive implimenttation](./peak_finding/recursive_implimentation/peak_finding.rb)
 - [Insertion Sort](./insertion_sort/)
   - [linear implimentation](./insertion_sort/linear_implimentation)
-  - [recursive implimenation](./insertion_sort/recursive_implimenation)
+- [Bubble Sort](./bubble_sort/bubble_sort.rb)
 
 **For each algorithm used, there will be two types of approaches:**
 
